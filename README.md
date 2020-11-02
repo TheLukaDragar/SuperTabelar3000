@@ -1,4 +1,6 @@
 # SuperTabelar3000
+
+```
 Automatic DS homework solver just copy and paste "t∨p∨u,t⇒(p∨u),¬u∨¬q∨s⊨¬t∧p" and you will get the table out
 --------------------Results------------------------------
 TPUQS
@@ -36,3 +38,7 @@ TPUQS
 11111 111 0 protiprimer
 -------------------------------------------------------
 Protiprimerov: 13
+
+```
+
+Enjoy
