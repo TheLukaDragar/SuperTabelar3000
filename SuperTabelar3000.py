@@ -46,10 +46,10 @@ def implicationsorter(izraz):
     # print(stimplikacij)
 
     lst = []
-    print("0-------------")
+
     for i in range(0, stimplikacij):
         endel = izraz.split("implc")[i]
-        print(endel)
+        #print(endel)
 
         # sprehajanjelevo
         if "(" in endel:
@@ -61,12 +61,12 @@ def implicationsorter(izraz):
 
         elif ")" in endel:
             endel= endel
-            print("LST"+str(lst))
+          #  print("LST"+str(lst))
             dd=lst[i-1]
 
             new=dd.split("(",1)
             lst[i-1]= new[0]+" ( " + " not "+new[1]
-            print(dd)
+         #   print(dd)
 
 
 
@@ -74,7 +74,7 @@ def implicationsorter(izraz):
 
             endel = " not " + " ( "+ endel+" ) "
 
-        print(str(endel))
+        #print(str(endel))
 
         lst.append(endel)
 
@@ -119,6 +119,10 @@ if __name__ == "__main__":
 
     for zraz in izraziall:
 
+        print("-------------------------")
+        print(zraz)
+        print("-------------------------")
+
         listofoneszeros = []
 
         for i in range(0, 2 ** len(numofvar)):
@@ -161,6 +165,10 @@ if __name__ == "__main__":
 
 newlisthor = []
 protcounter = 0
+print("--------------------Results------------------------------")
+for num in numofvar:
+    print(num,end="")
+print()
 for k in range(0, 2 ** len(numofvar)):
 
     bin0 = list("{0:b}".format(k).zfill(len(numofvar)))
@@ -177,4 +185,7 @@ for k in range(0, 2 ** len(numofvar)):
         protiprimer = "protiprimer"
         protcounter = protcounter + 1
     print("".join(bin0) + " " + outzeros[:-1] + " " + outzeros[-1] + " " + protiprimer)
+
+print("-------------------------------------------------------")
+
 print("Protiprimerov: " + str(protcounter))
