@@ -45,34 +45,43 @@ def implicationsorter(izraz):
     stimplikacij = len(izraz.split("implc")) - 1
     # print(stimplikacij)
 
-    if stimplikacij == 1:
-        izz = izraz.split("implc", 1)
+    lst = []
+    print("0-------------")
+    for i in range(0, stimplikacij):
+        endel = izraz.split("implc")[i]
+        print(endel)
 
-        iz = "imply(" + izz[0] + "," + izz[1] + ")"
-        return iz
-    else:
-        lst = []
-        print("0-------------")
-        for i in range(0, stimplikacij):
-            endel = izraz.split("implc")[i]
+        # sprehajanjelevo
+        if "(" in endel:
+            rev = str(endel[::-1])
 
-            # sprehajanjelevo
-            if "(" in endel:
-                rev = str(endel[::-1])
+            o = rev.split("(", 1)
 
-                o = rev.split("(", 1)
+            endel = " not "+" ( " + o[1][::-1] + o[0][::-1]
 
-                endel = " not "+" ( " + o[1][::-1]  + o[0][::-1]
+        elif ")" in endel:
+            endel= endel
+            print("LST"+str(lst))
+            dd=lst[i-1]
 
-            else:
+            new=dd.split("(",1)
+            lst[i-1]= new[0]+" ( " + " not "+new[1]
+            print(dd)
 
-                endel = " not " + endel
 
-            lst.append(endel)
 
-        toret = " or ".join(lst)
-        toret = toret + " or " + izraz.split("implc")[-1]
-        return toret
+        else:
+
+            endel = " not " + " ( "+ endel+" ) "
+
+        print(str(endel))
+
+        lst.append(endel)
+
+    toret = " or ".join(lst)
+    toret = toret + " or " + izraz.split("implc")[-1]
+    print(toret)
+    return toret
 
 
 if __name__ == "__main__":
@@ -118,6 +127,7 @@ if __name__ == "__main__":
             iz = zraz
 
             if "implc" in iz:
+
                 iz = implicationsorter(iz)
 
                 # izz=iz.split("implc",1)
