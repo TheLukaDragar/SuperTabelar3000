@@ -34,6 +34,7 @@ def getinput(x):
         if a=="CLEAR":
             print("ok clearing")
             listizrazi.clear()
+            listofvar.clear()
             nums=[]
             return nums
 
