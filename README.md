@@ -1,4 +1,4 @@
-# Tablelar.py
+# Tabelar.py
 enter as many expressionslike  a+b a>>b a*b a&&b... a+c+d .. and It will create and add to a truth table.
 ```
 vnesi izraz
