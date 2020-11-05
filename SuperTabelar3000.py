@@ -1,4 +1,21 @@
 import re
+from functools import partial
+
+class Infix(object):
+    def __init__(self, func):
+        self.func = func
+    def __or__(self, other):
+        return self.func(other)
+    def __ror__(self, other):
+        return Infix(partial(self.func, other))
+    def __call__(self, v1, v2):
+        return self.func(v1, v2)
+
+@Infix
+def im(a, b):
+    return not a or b
+
+
 
 translator = {"∧": " and ",
               "∨": " or ",
@@ -9,7 +26,7 @@ translator = {"∧": " and ",
 
 def getinput(x):
     if x == 0:
-        # a="t->(p∨u),u∧(¬t∨s),¬s∨¬u∨r⊨p∧r∨¬p∧¬r".upper()
+        #a="t->(p∨u),u∧(¬t∨s),¬s∨¬u∨r⊨p∧r∨¬p∧¬r".upper()
         #a = "s∧q⇒r,s,p⇒¬(q⇒r)⊨¬p".upper()
         #q⇒(¬r∧t),r⇒(¬p∨¬u),¬t⇔p∨s⊨(q∨t)∧(¬q∨¬t) ROBLEMATICNA
 
@@ -66,7 +83,7 @@ def implicationsorter(izraz):
 
             new=dd.split("(",1)
             lst[i-1]= new[0]+" ( " + " not "+new[1]
-         #   print(dd)
+            print(dd)
 
 
 
@@ -129,6 +146,8 @@ if __name__ == "__main__":
             lst = list("{0:b}".format(i).zfill(len(numofvar)))
 
             iz = zraz
+
+
 
             if "implc" in iz:
 
