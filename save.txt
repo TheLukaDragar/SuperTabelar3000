@@ -1,18 +1,18 @@
-['avto or miza  and  hisa  ==  kolo']
-avto hisakolomiza
-0    000 0
-0    001 1
-0    010 0
-0    011 0
-0100 0
-0101 0
-0110 0
-0111 1
-1000 1
-1001 1
-1010 1
-1011 1
-1100 1
-1101 1
-1110 1
-1111 1
+['(x1  ^1 or  x2)  ^  (x3  ==  x4)', ' not  x1  and   not  x3  and  x4  or   not  x1  and  x3  and   not  x4  or  x1  and   not  x2  and   not  x3  and   not  x4  or  x1  and   not  x2  and  x3  and  x4  or  x2  and   not  x3  and  x4  or  x2  and  x3  and   not  x4']
+x1x2x3x4
+0000 00
+0001 11
+0010 11
+0011 00
+0100 00
+0101 11
+0110 11
+0111 00
+1000 11
+1001 00
+1010 00
+1011 11
+1100 00
+1101 11
+1110 11
+1111 00
