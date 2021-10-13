@@ -1,4 +1,5 @@
 # Tabelar.py
+Run python Tabelar_2.0.py
 enter as many expressions as you like  a+b a>>b a*b a&&b... a+c+d .. and It will create and add to a truth table and minimize every function. you can name variables whatever you want.
 ```
 enter expression
